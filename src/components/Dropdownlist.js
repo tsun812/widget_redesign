@@ -9,11 +9,12 @@ export default function Dropdownlist(props) {
   const [config, setConfig] = React.useState("");
 
   const handleChange = (event) => {
+    console.log(event.target.value);
     setConfig(event.target.value);
   };
 
   const listitems = props.list.map((item) => {
-    return <MenuItem name={item}>{item}</MenuItem>;
+    return <MenuItem value={item}>{item}</MenuItem>;
   });
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -24,7 +25,7 @@ export default function Dropdownlist(props) {
           id="demo-simple-select"
           value={config}
           label=""
-          onChange={handleChange}
+          onChange={(e) => handleChange(e)}
         >
           {listitems}
         </Select>
