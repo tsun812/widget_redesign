@@ -11,7 +11,7 @@ function App() {
     Language: ["Python", "C++ / Java"],
     "Compute Platform": ["CUDA 10.2", "CUDA 11.3", "ROCm 4.2 (beta)", "CPU"],
   };
-  const headings = Object.entries(data).map((item, index) => {
+  const headings = Object.entries(data).map((item) => {
     return (
       <div>
         <Dropdownheading name={item[0]} />

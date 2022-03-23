@@ -7,12 +7,10 @@ import { FormControl } from "@mui/material";
 import { OutlinedInput } from "@mui/material";
 import { InputAdornment } from "@mui/material";
 export default function Command(props) {
-  const [command, setCommand] = React.useState("");
+  const [command, setCommand] = React.useState("customizable command");
 
   const handleClick = (event) => {
-    // console.log(event.target.value);
-    // setCommand(event.target.value);
-    // navigator.clipboard.writeText(this.state.textToCopy);
+    navigator.clipboard.writeText(command);
   };
 
   return (
@@ -23,8 +21,7 @@ export default function Command(props) {
       <OutlinedInput
         id="outlined-adornment-password"
         type={"text"}
-        value={"placeholder"}
-        onChange={handleClick()}
+        value={"customizable command"}
         readOnly={true}
         endAdornment={
           <InputAdornment position="end">
