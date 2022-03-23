@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Dropdownlist from "./components/Dropdownlist";
 import Dropdownheading from "./components/Dropdownheading";
+import Command from "./components/Command";
 function App() {
   const data = {
     "PyTorch Build": ["Stable (1.11.0)", "Preview (Nightly)", "LTS (1.8.2)"],
@@ -9,9 +10,8 @@ function App() {
     Package: ["Conda", "Pip", "LibTorch", "Source"],
     Language: ["Python", "C++ / Java"],
     "Compute Platform": ["CUDA 10.2", "CUDA 11.3", "ROCm 4.2 (beta)", "CPU"],
-    "Run this Command": [],
   };
-  const headings = Object.entries(data).map((item) => {
+  const headings = Object.entries(data).map((item, index) => {
     return (
       <div>
         <Dropdownheading name={item[0]} />
@@ -22,6 +22,7 @@ function App() {
   return (
     <div class="row">
       <div class="col-md-3 headings">{headings}</div>
+      <Command />
     </div>
   );
 }
